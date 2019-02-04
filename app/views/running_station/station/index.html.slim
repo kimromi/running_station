@@ -1,0 +1,9 @@
+- if @runners.empty?
+  p Not found runners!
+  p please set runner app/runners/[runner_name].rb
+- else
+  ul
+  - @runners.each do |runner|
+    li
+      span 🏃
+      = link_to runner, running_station.runner_path(runner)
