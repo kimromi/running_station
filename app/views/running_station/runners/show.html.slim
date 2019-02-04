@@ -1,0 +1,28 @@
+h2
+  span 🏃
+  = @runner.script_name
+
+pre
+  code
+    = @runner.code
+
+- unless @status
+  = form_tag(running_station.runner_path(@runner.name), method: :put)
+    button execute
+
+- if @status
+  h3 exit code
+  p
+    = @status.exitstatus
+
+- if @stdout
+  h3 stdout
+  pre
+    code
+      = @stdout
+
+- if @stderr
+  h3 stderr
+  pre
+    code
+      = @stderr
