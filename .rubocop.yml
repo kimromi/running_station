@@ -1,3 +1,9 @@
 inherit_gem:
   rubocop-rails_config:
     - config/rails.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/dummy/**/*'
+
