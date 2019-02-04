@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "open3"
 
 module RunningStation
@@ -18,14 +19,14 @@ module RunningStation
 
     private
 
-    def runner_params
-      params.permit(:name)
-    end
-
-    def redirect_to_station_if_excluded_runners
-      if @runners.exclude?(runner_params[:name])
-        redirect_to running_station.root_path
+      def runner_params
+        params.permit(:name)
       end
-    end
+
+      def redirect_to_station_if_excluded_runners
+        if @runners.exclude?(runner_params[:name])
+          redirect_to running_station.root_path
+        end
+      end
   end
 end

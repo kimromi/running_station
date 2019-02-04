@@ -1,18 +1,19 @@
+# frozen_string_literal: true
+
 module RunningStation
   describe RunnersController, type: :request do
-
-    describe '#show' do
+    describe "#show" do
       before { get running_station.runner_path(runner) }
 
-      context 'not exist runner' do
-        let(:runner) { 'not_exist' }
+      context "not exist runner" do
+        let(:runner) { "not_exist" }
 
         it { expect(response.status).to eq 302 }
-        it { expect(response).to redirect_to('http://www.example.com/running_station/') }
+        it { expect(response).to redirect_to("http://www.example.com/running_station/") }
       end
 
-      context 'no_args' do
-        let(:runner) { 'no_args' }
+      context "no_args" do
+        let(:runner) { "no_args" }
 
         it { expect(response.status).to eq 200 }
         it { expect(response.body).to include "<h2><span>🏃</span>no_args.rb</h2>" }
@@ -20,18 +21,18 @@ module RunningStation
       end
     end
 
-    describe '#update' do
+    describe "#update" do
       before { put running_station.runner_path(runner) }
 
-      context 'not exist runner' do
-        let(:runner) { 'not_exist' }
+      context "not exist runner" do
+        let(:runner) { "not_exist" }
 
         it { expect(response.status).to eq 302 }
-        it { expect(response).to redirect_to('http://www.example.com/running_station/') }
+        it { expect(response).to redirect_to("http://www.example.com/running_station/") }
       end
 
-      context 'no_args' do
-        let(:runner) { 'no_args' }
+      context "no_args" do
+        let(:runner) { "no_args" }
 
         it { expect(response.status).to eq 200 }
         it { expect(response.body).to include "<h3>stdout</h3>" }

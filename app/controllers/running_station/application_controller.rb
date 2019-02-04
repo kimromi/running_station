@@ -7,10 +7,10 @@ module RunningStation
 
     private
 
-    def search_runners
-      @runners = Dir.glob(Rails.root + 'app/runners/*.rb').map do |file|
-        File.basename(file).gsub(/\.rb$/, '')
+      def search_runners
+        @runners = Dir.glob(Rails.root + "app/runners/*.rb").map do |file|
+          File.basename(file).gsub(/\.rb$/, "")
+        end
       end
-    end
   end
 end

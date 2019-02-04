@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module RunningStation
   describe StationController, type: :request do
-    describe '#index' do
+    describe "#index" do
       before { get running_station_path }
 
       it { expect(response.status).to eq 200 }
