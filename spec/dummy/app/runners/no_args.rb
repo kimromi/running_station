@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-print "Hello! Running Station"
+puts "Hello! Running Station"

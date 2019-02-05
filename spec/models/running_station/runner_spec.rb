@@ -25,7 +25,7 @@ module RunningStation
     describe "#code" do
       subject { runner.code }
 
-      it { is_expected.to eq "# frozen_string_literal: true\n\nprint \"Hello! Running Station\"\n" }
+      it { is_expected.to eq "# frozen_string_literal: true\n\nputs \"Hello! Running Station\"\n" }
     end
   end
 end
