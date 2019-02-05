@@ -1,0 +1,4 @@
+.list-group.list-group-flush
+  .list-group-item Runners
+  - @runners.each do |runner|
+    = link_to '🏃' + runner, running_station.runner_path(runner), { class: 'list-group-item list-group-item-action' }

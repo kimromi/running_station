@@ -1,28 +1,27 @@
-h2
+h2.my-3
   span 🏃
   = @runner.script_name
 
-pre
-  code
-    = @runner.code
-
 - unless @status
+  pre.pre-scrollable
+    code.source-code.lang-ruby
+      = @runner.code
   = form_tag(running_station.runner_path(@runner.name), method: :put)
-    button execute
+    button.btn.btn-block.btn-primary Execute
+- else
+  - if @status.success?
+    .alert.alert-success
+      span Success!
+  - else
+    .alert.alert-danger
+      span Failure!
 
-- if @status
-  h3 exit code
-  p
-    = @status.exitstatus
-
-- if @stdout
-  h3 stdout
-  pre
-    code
+  h5 stdout
+  pre.pre-scrollable
+    code.terminal.lang-console
       = @stdout
 
-- if @stderr
-  h3 stderr
-  pre
-    code
+  h5 stderr
+  pre.pre-scrollable
+    code.terminal.lang-console
       = @stderr
