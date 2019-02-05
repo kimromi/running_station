@@ -16,8 +16,8 @@ module RunningStation
         let(:runner) { "no_args" }
 
         it { expect(response.status).to eq 200 }
-        it { expect(response.body).to include "<h2><span>🏃</span>no_args.rb</h2>" }
-        it { expect(response.body).to include "<pre><code># frozen_string_literal: true\n\nprint &quot;Hello! Running Station&quot;\n</code></pre>" }
+        it { expect(response.body).to include "<h2 class=\"my-3\"><span>🏃</span>no_args.rb</h2>" }
+        it { expect(response.body).to include "<pre class=\"pre-scrollable\"><code class=\"source-code lang-ruby\"># frozen_string_literal: true\n\nputs &quot;Hello! Running Station&quot;\n</code></pre>" }
       end
     end
 
@@ -35,8 +35,8 @@ module RunningStation
         let(:runner) { "no_args" }
 
         it { expect(response.status).to eq 200 }
-        it { expect(response.body).to include "<h3>stdout</h3>" }
-        it { expect(response.body).to include "<pre><code>Hello! Running Station</code></pre>" }
+        it { expect(response.body).to include "<h5>stdout</h5>" }
+        it { expect(response.body).to include "<pre class=\"pre-scrollable\"><code class=\"terminal lang-console\">Hello! Running Station\n</code></pre>" }
       end
     end
   end
